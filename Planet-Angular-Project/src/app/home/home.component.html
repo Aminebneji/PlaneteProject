@@ -1,22 +1,8 @@
-<section class="text">
-    <h2>Nasa</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, cupiditate. Dolorum, quisquam cupiditate
-        nam
-        voluptatem aspernatur autem mollitia! Quo quas totam neque sint error beatae repellendus rem dignissimos
-        soluta
-        cupiditate?
-        Explicabo quo eius incidunt odio repudiandae, laudantium fugiat numquam necessitatibus quaerat dignissimos
-        itaque unde quos ut. Natus placeat odit dolores eum consequatur. Praesentium aspernatur iure non atque
-        cupiditate sequi ipsam.
-        Eos laboriosam quis tenetur, rerum adipisci voluptas.</p>
-</section>
-
-<section class="cards">
-    <h3>Datas</h3>
-    <div class="card">
-        <img src="" alt="">
-        <h1></h1>
-        <p></p>
-        <button class="Fav button">Fav</button>
+<div class="container-home">
+    <div class="card" *ngFor="let p of home?.results">
+        <div class="imgHome">
+            <img src={{p.img}} alt={{p.name}} (click)="PlanetOnValue(p)">
+        </div>
+        <h2>{{p.name}}</h2>
     </div>
-</section>
+</div>
