@@ -17,6 +17,9 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   home: any;
+  Planet: any[] = []
+  datanumber = 4;
+
 
 
   constructor(private http: HttpClient, private service: ServiceService, private router: Router) { }
@@ -24,13 +27,17 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     this.home = this.service.homePlanet();
-    console.log(this.service.planetData);
 
+    this.Planet = this.service.planetData
+    console.log(this.Planet)
 
   }
 
-  PlanetOnValue(data: any) {
-    this.router.navigateByUrl(`/planet/list${data.name}`);
-    console.log("yo" + data.name);
+  public AddOnFav(data: any) {
+    console.log(data.name);
+
+    localStorage.setItem(data.name, data.id);
+    console.log(localStorage)
   }
+
 }

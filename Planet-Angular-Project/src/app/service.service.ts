@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class ServiceService {
 
 
-  planetData: any = [];
+  planetData: any[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -18,32 +18,9 @@ export class ServiceService {
         'X-RapidAPI-Host': 'planets-info-by-newbapi.p.rapidapi.com'
       }
     }).subscribe(response => {
-      this.planetData.push(response);
-    });
-    return this.planetData
-  }
-
-  onSearch(data: any) {
-    return this.http.get(`https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planet/list${data}`, {
-      "headers": {
-        'X-RapidAPI-Key': '711b86254cmsh3ddaabf1a375146p12b4a3jsnb183386ea0c5',
-        'X-RapidAPI-Host': 'planets-info-by-newbapi.p.rapidapi.com'
-      }
+      this.planetData[0] = response;
     });
   }
-
-
-  onSearchPlanet(id: any) {
-
-    return this.http.get(`https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planet/list${id}`, {
-
-      "headers": {
-        'X-RapidAPI-Key': '711b86254cmsh3ddaabf1a375146p12b4a3jsnb183386ea0c5',
-        'X-RapidAPI-Host': 'planets-info-by-newbapi.p.rapidapi.com'
-      }
-    });
-  }
-
 
 }
 

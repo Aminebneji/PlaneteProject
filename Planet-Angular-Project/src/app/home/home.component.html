@@ -1,8 +1,11 @@
-<div class="container-home">
-    <div class="card" *ngFor="let p of home?.results">
-        <div class="imgHome">
-            <img src={{p.img}} alt={{p.name}} (click)="PlanetOnValue(p)">
+<section class="home">
+    <div class="container-home">
+        <div class="card" *ngFor="let p of Planet[0]" (click)="AddOnFav(p)">
+            <div class="imgHome">
+                <img src={{p.imgSrc[0].img}} alt={{p.name}}>
+            </div>
+            <h2>{{p.name}}</h2>
+            <p>{{p.description}}</p>
         </div>
-        <h2>{{p.name}}</h2>
     </div>
-</div>
+</section>
