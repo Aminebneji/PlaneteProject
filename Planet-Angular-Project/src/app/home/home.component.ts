@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   Planet: any[] = []
   datanumber = 4;
 
+  dataToFav: any;
 
 
   constructor(private http: HttpClient, private service: ServiceService, private router: Router) { }
@@ -33,11 +34,14 @@ export class HomeComponent implements OnInit {
 
   }
 
-  public AddOnFav(data: any) {
-    console.log(data.name);
+  AddOnFav = (data: any) => {
+
+    this.dataToFav = data;
 
     localStorage.setItem(data.name, data.id);
     console.log(localStorage)
+    console.log(this.dataToFav)
+
   }
 
 }

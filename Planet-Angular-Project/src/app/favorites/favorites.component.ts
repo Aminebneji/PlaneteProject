@@ -12,11 +12,11 @@ export class FavoritesComponent implements OnInit {
 
   constructor(private http: HttpClient, private service: ServiceService, private router: Router) { }
 
-  dataa: any;
+
 
   ngOnInit(): void {
 
-    let dataa = localStorage.getItem(this.dataa.name)
+
 
 
   }
